@@ -1,7 +1,7 @@
 import express from "express";
 import conectaDB from "./config/dbConnect.js";
 
-const conexao = await conectaDB();
+const conexao = await conectaDB(await mongoose.connect);
 
 conexao.on("error", (erro)=>{
     console.error("erro de conexao", erro);
