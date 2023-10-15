@@ -3,7 +3,7 @@ import mongoose, {mongo} from "mongoose";
 //import mongoose, {mongo} from "mongoose"
 
 async function conectaDB() {
-    mongoose.connect("mongodb+srv:admin:<admin123>@cluster0.6yw9lcl.mongodb.net/library?retryWrites=true&w=majority");
+    mongoose.connect("mongodb+srv://admin:admin123@cluster0.6yw9lcl.mongodb.net/livraria?retryWrites=true&w=majority");
     return mongoose.connection;
 }
 
