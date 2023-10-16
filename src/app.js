@@ -1,5 +1,6 @@
 import express from "express";
 import conectaDB from "./config/dbConnect.js";
+import livro from "./models/Livro.js";
 
 const conexao = await conectaDB();
 
@@ -15,29 +16,16 @@ conexao.once("open", ()=>{
 const app = express();
 app.use(express.json()); //middleware: utilizados para acessar requisições e respostas enquanto tais estão sendo feitas e fazer algums ações nas mesmas (como modificar objetos, passar infos). Qualquer requisição que tenha como body um objetivo compativel com json, vai passar pelo middleware e será parceado(convertido) para JSON. Tal conversão precisa ser realizada porque os dados que chegam via requisição chegam como string
 
-const livros = [
-    {
-        id: 1,
-        titulo: "A Pedra Filosofal"
-    },
-    {
-        id: 2,
-        titulo: "A Câmera Secreta"
-    }
-]
 
-function buscaLivros(id){
-    return livros.findIndex(livro =>{
-        return livro.id === Number(id); //informações veem como string, devendo serem convertidas e especificadas
-    })
-}
 app.get("/", (req,res)=>{
     res.status(200).send("Curso de Node.js");
 });
 
-app.get("/livros", (req, res)=>{
-    res.status(200).json(livros)
-})
+// todo coddigo abaixo foi separado em livroController e livrosRoutes
+/*app.get("/livros", async (req, res)=>{
+    const listaLivros = await livro.find({}); //.find - metodo moongose que se conecta com o banco, como esta sem especificação, ele vai buscar e trazer tudo que encontrar na coleção livros
+    res.status(200).json(listaLivros)*/
+//})
 
 
 // get é o R do CRUD (read)
