@@ -1,8 +1,10 @@
 import express from "express";
 import conectaDB from "./config/dbConnect.js";
-import livro from "./models/Livro.js";
+import routes from "../../routes/index.js"
 
 const conexao = await conectaDB();
+const app = express();
+routes(app); //o aap foi definido como parametro no index.js, em routes; tal é a instância do express
 
 conexao.on("error", (erro)=>{
     console.error("erro de conexao", erro);
@@ -12,16 +14,13 @@ conexao.once("open", ()=>{
     console.log("conexao com o banco realizada com sucesso");
 });
 
-
-const app = express();
-app.use(express.json()); //middleware: utilizados para acessar requisições e respostas enquanto tais estão sendo feitas e fazer algums ações nas mesmas (como modificar objetos, passar infos). Qualquer requisição que tenha como body um objetivo compativel com json, vai passar pelo middleware e será parceado(convertido) para JSON. Tal conversão precisa ser realizada porque os dados que chegam via requisição chegam como string
+// todo codigo abaixo foi separado em livroController e livrosRoutes
 
 
-app.get("/", (req,res)=>{
-    res.status(200).send("Curso de Node.js");
-});
+//const app = express();
+//app.use(express.json()); //middleware: utilizados para acessar requisições e respostas enquanto tais estão sendo feitas e fazer algums ações nas mesmas (como modificar objetos, passar infos). Qualquer requisição que tenha como body um objetivo compativel com json, vai passar pelo middleware e será parceado(convertido) para JSON. Tal conversão precisa ser realizada porque os dados que chegam via requisição chegam como string
 
-// todo coddigo abaixo foi separado em livroController e livrosRoutes
+
 /*app.get("/livros", async (req, res)=>{
     const listaLivros = await livro.find({}); //.find - metodo moongose que se conecta com o banco, como esta sem especificação, ele vai buscar e trazer tudo que encontrar na coleção livros
     res.status(200).json(listaLivros)*/
@@ -38,11 +37,11 @@ app.get("/livros/:id", (req, res) =>{
 
 
 //post é o C do CRUD (create)
-app.post("/livros", (req, res) => {
+/*app.post("/livros", (req, res) => {
     livros.push(req.body); //req.body refere-se ao objeto req, que está sendo recebido dentro da função; gerenciado pelo express, fara um push dentro do array
-    res.status(201).send("livro cadastrado") //codigo de registri criado
+    res.status(201).send("livro cadastrado") //codigo de registro criado
     app.post
-})
+})*/
 
 //put é o U do CRUD (update)
 //alterando titulo do livro, atraves do index
