@@ -2,6 +2,7 @@
 
 import livro from "../models/Livro.js";
 import livro from "../models/Livro.js";
+import livro from "../models/Livro.js";
 
 //static é usado quando se quer usar metodos de uma classe sem ter  que instanciar a classe, criando um obj new
 
@@ -18,12 +19,33 @@ class LivroController{
 
 //catch(error){res.status(500).json({message:`${error.message} - FALHA NO CADASTRO DO LIVRO`}) - tratativa de erro, trazendo a mensagem de falha caso o try falhe, sem derrubar a aplicação e possibilitando saber o que e onde aconteceu
 
-    static async cadastrarLivro(req, res){
-        try{
-            const novoLivro = await livro.create(req.body);
-            res.status(201).json({message: "cadastrado com sucesso!", livro: novoLivro});
+static async listarLivros(req, res){
+    try{
+    const listaLivros = await livro.find({});
+        res.status(200).json(listaLivros);    
+    } catch (error){
+        res.status(500).json({message: `${error.message} - FALHA NA REQUISIÇÃO`})
+    };
+};
+
+
+static async listarLivroID(req, res){
+    try{
+        const id = req.params.id;
+        const livro = await livro.findByID(id);
+        res.status(200).json(livro);
+    } catch (error){
+        res.status(500).json({message:`${error.message} - FALHA NA REQUISIÇÃO`});
+    }
+}
+
+
+static async cadastrarLivro(req, res){
+    try{
+    const novoLivro = await livro.create(req.body);
+        res.status(201).json({message: "cadastrado com sucesso!", livro: novoLivro});
         } catch(error){
-            res.status(500).json({message:`${error.message} - FALHA NO CADASTRO DO LIVRO`})
+        res.status(500).json({message:`${error.message} - FALHA NO CADASTRO DO LIVRO`})
         }
     }
 };
