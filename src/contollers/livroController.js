@@ -40,6 +40,17 @@ static async listarLivroID(req, res){
 }
 
 
+//ordem de parametros passados no await é definida pelo proprio moongoose. Como o metodo é findByIDAndUpdate, primeiro deve-se passar o ID para que possa encontar o que se procura
+static async atualizarLivro(req,res){
+    try{
+        const id = req.params.id;
+        await livro.findByIdAndUpdate(id, req.body);
+        res.status(200).json({message:"Livro atualizado!"})
+    } catch(error){
+    res.status(500).json({message:`${error.message}-FALHA NA ATUALIZAÇÃO`})        
+    }
+}
+
 static async cadastrarLivro(req, res){
     try{
     const novoLivro = await livro.create(req.body);

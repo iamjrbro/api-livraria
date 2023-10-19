@@ -30,10 +30,10 @@ conexao.once("open", ()=>{
 // get é o R do CRUD (read)
 // : prefixa uma informação variavel
 //buscando livro atraves do id do mesmo, usando index
-app.get("/livros/:id", (req, res) =>{
+/*app.get("/livros/:id", (req, res) =>{
     const index = buscaLivros(req.params.id) //id esta sendo passado como parametro da rota
     res.status(200).json(livros[index]);
-}) 
+})*/
 
 
 //post é o C do CRUD (create)
@@ -45,11 +45,11 @@ app.get("/livros/:id", (req, res) =>{
 
 //put é o U do CRUD (update)
 //alterando titulo do livro, atraves do index
-app.put("/livros/:id", (req, res)=>{
+/*app.put("/livros/:id", (req, res)=>{
     const index = buscaLivros(req.params.id)
     livros[index].titulo = req.body.titulo;  //pegando a propriedade do objeto e substituindo seu valor atual (pegando a propriedade titulo do objeto livros e substituindo o titulo)
     res.status(200).json(livros)
-})
+})*/
 
 //delete é o D do CRUD (delete)
 app.delete("/livros/:id", (req, res)=>{
