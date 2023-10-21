@@ -1,6 +1,6 @@
 import express from "express";
 import LivroController from "../contollers/livroController";
-import livro from "../models/Livro";
+
 
 //Router é um metodo especifico do express para lidar com rotas
 const routes = express.Router();
