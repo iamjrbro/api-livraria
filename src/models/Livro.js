@@ -11,7 +11,7 @@ const livroSchema = new mongoose.Schema(
   { versionKey: false }
 ); //sem versionamento de schema
 
-const livroModel = mongoose.model("livros", livroSchema); //referente a colecao, por isso passa-se a coleção de referencia e seu schema
+const livroModel = mongoose.model("livros", livroSchema); 
 
 export { livroModel };
 

@@ -4,7 +4,7 @@ import { livrosRoutes } from "./routes/livrosRoutes.js";
 
 const conexao = await conectaDB();
 const app = express();
-routes(app); //o aap foi definido como parametro no index.js, em routes; tal é a instância do express
+routes(app); 
 
 conexao.on("error", (erro) => {
   console.error("Erro de conexao", erro);
