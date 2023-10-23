@@ -13,6 +13,3 @@ const livro = mongoose.model("livros", livroSchema); //referente a colecao, por 
 export default livro;
 
 
-//schema é um obj de configuração que define a estrutura e as propriedades de um documento; relacionado a APIs e DBs em geral
-//{type: mongoose.Schema.Types.String} //o que se passa nesse objeto é o tipo de dado dentro do mongoDB
-//model: obj que representa uma coleção em uma DB; interface para que a API interaja com os documentos de uma coleção; o modelo informa a API as acoes do CRUD que podem ser realizadas
