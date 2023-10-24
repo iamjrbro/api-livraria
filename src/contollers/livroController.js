@@ -1,6 +1,4 @@
-import livro from "../models/Livro.js";
-import livro from "../models/Livro.js";
-import livro from "../models/Livro.js";
+import livros from "../models/Livro.js";
 
 class LivroController{
 
