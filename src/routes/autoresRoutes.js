@@ -10,4 +10,4 @@ routesAutor.post("/autor", AutorController.cadastrarAutor);
 routesAutor.put("/autor;id:", AutorController.atualizarAutor);
 routesAutor.delete("/livros/id:", AutorController.deletarAutor);
 
-export {routesAutor};
+export default routesAutor;

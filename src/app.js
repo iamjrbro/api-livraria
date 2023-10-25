@@ -1,6 +1,6 @@
 import express from "express";
 import { conectaDB } from "./config/dbConnect.js";
-import { livrosRoutes } from "./routes/livrosRoutes.js";
+import  routes from "./routes/livrosRoutes.js";
 
 const conexao = await conectaDB();
 const app = express();

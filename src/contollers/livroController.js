@@ -1,4 +1,4 @@
-import {livroModel} from "../models/Livro.js";
+import livro from "../models/Livro.js";
 
 
 class LivroController{
@@ -66,4 +66,4 @@ static async cadastrarLivro(req, res){
   }
 }
 
-export { LivroController };
+export default LivroController;
