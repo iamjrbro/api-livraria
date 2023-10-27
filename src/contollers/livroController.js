@@ -1,5 +1,6 @@
 import { autor } from "../models/Autor.js";
 import livro from "../models/Livro.js";
+import editoraController from "./editoraController.js";
 
 class LivroController{
 
@@ -68,9 +69,16 @@ static async cadastrarLivro(req, res){
     };
   };
 
-  static async livroPorEditora (req,res){
-    
-  }
-}
+/* static async livroPorEditora (req,res){
+    const editora = req.query.editora;
+    try{
+    const livrosEditora = await livroModel.find({editora:editora})
+    res.status(200).json(livrosEditora)
+    } catch (error){
+    res.status(500).json({message: "FALHA NA BUSCA"})
+    };
+  };*/
+};
+
 
 export default LivroController;
