@@ -73,4 +73,4 @@ static async cadastrarLivro(req, res){
   }
 }
 
-export { LivroController };
+export default LivroController;
