@@ -1,6 +1,6 @@
 import express from "express";
 import { conectaDB } from "./config/dbConnect.js";
-import  routes from "./routes/livrosRoutes.js";
+import  routes from "./routes/index.js";
 
 const conexao = await conectaDB();
 const app = express();
@@ -11,7 +11,7 @@ conexao.on("error", (erro) => {
 });
 
 conexao.once("open", () => {
-  console.log(`Conexão com o banco realizada com sucesso 📦`);
+  console.log(`Conexão com o banco realizada com sucesso`);
 });
 
 
