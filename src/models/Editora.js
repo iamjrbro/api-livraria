@@ -10,4 +10,8 @@ const editoraSchema = new mongoose.editoraSchema({
 
 const editora = mongoose.model("Editora", editoraSchema);
 
+<<<<<<< HEAD
 export {editora, editoraSchema}; 
+=======
+export {editora, editoraSchema};
+>>>>>>> ef4c7c75302f4f942b0e296d897611fd22fabc60
