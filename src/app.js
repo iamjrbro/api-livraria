@@ -22,4 +22,4 @@ app.delete("/livros/:id", (req, res)=>{
 });
 
 
-export { app };
+export default app;

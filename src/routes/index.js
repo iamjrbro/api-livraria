@@ -13,5 +13,5 @@ const routes = (app)=>{
     //app.use(express.json(), livros, autores);
 };
 
-export {routes};
+export default routes;
 

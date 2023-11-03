@@ -1,21 +1,10 @@
 import { autor } from "../models/Autor.js";
-<<<<<<< HEAD
+
 import livroModel from "../models/Livro.js";  
 //import livroModel from "../models/Livro.js";
 //import livro from "../models/Livro.js";
-=======
 import livro from "../models/Livro.js";
 import editoraController from "./editoraController.js";
-
-class LivroController{
-
-    static async listarLivros(req, res){
-        const listaLivros = await livro.find({});
-        res.status(200).json(listaLivros)
-
-};
->>>>>>> ef4c7c75302f4f942b0e296d897611fd22fabc60
-
 
 class LivroController {
   static async listarLivros(req, res) {
@@ -47,7 +36,7 @@ class LivroController {
     };
   };
 
-<<<<<<< HEAD
+
   static async cadastrarLivro(req, res) {
     const novoLivro = req.body;
     try {
@@ -59,7 +48,8 @@ class LivroController {
       res.status(500).json({ message: `${error.message} - FALHA NO CADASTRO DO LIVRO` });
     };
   };
-=======
+
+
 static async atualizarLivro(req,res){
     try{
         const id = req.params.id;
@@ -81,7 +71,7 @@ static async cadastrarLivro(req, res){
         res.status(500).json({message:`${error.message} - FALHA NO CADASTRO DO LIVRO`})
         }
     }
->>>>>>> ef4c7c75302f4f942b0e296d897611fd22fabc60
+
 
   static async deletarLivro(req, res) {
     try {
@@ -89,7 +79,6 @@ static async cadastrarLivro(req, res){
       await livroModel.findByIdAndDelete(id);
       res.status(200).json({ message: "Livro excluído com sucesso!" });
     } catch (error) {
-<<<<<<< HEAD
       res.status(500).json({ message: `${error.message} - FALHA AO DELETAR LIVRO` });
     };
   };
@@ -103,13 +92,11 @@ static async cadastrarLivro(req, res){
       res.status(500).json({ message: "FALHA NA BUSCA" });
     };
   };*/
-};
-=======
-      res
+};      /*res
         .status(500)
         .json({ message: `${error.message} - FALHA AO DELETAR LIVRO` });
     };
-  };
+  };*/
 
 /* static async livroPorEditora (req,res){
     const editora = req.query.editora;
@@ -119,9 +106,8 @@ static async cadastrarLivro(req, res){
     } catch (error){
     res.status(500).json({message: "FALHA NA BUSCA"})
     };
-  };*/
-};
+  };
+};*/
 
->>>>>>> ef4c7c75302f4f942b0e296d897611fd22fabc60
 
 export default LivroController;

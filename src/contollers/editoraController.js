@@ -1,6 +1,6 @@
-import { editora } from "../models/Editora";
-import { autor } from "../models/Autor";
-import livroModel from "../models/Livro";
+import { editora } from "../models/Editora.js";
+import { autor } from "../models/Autor.js";
+import livroModel from "../models/Livro.js";
 
 class editoraController{
     static async livroPorEditora (req,res){
