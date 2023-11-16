@@ -2,13 +2,13 @@ import mongoose from "mongoose";
 import { autorSchema } from "./Autor.js";
 import livroModel from "./Livro.js";
 
-const editoraSchema = new mongoose.editoraSchema({
+const editorasSchema = new mongoose.editoraSchema({
     id:{type: mongoose.Schema.Types.ObjectId},
     nome:{type: String, required:true}
 },
 {versionKey: false});
 
-const editora = mongoose.model("Editora", editoraSchema);
+const editora = mongoose.model("Editora", editorasSchema);
 
-export {editora, editoraSchema}; 
+export {editora, editorasSchema}; 
 
