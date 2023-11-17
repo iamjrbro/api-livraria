@@ -1,5 +1,11 @@
+build
 node_modules
-
-//
-
+package-lock.json
+yarn-lock.json
+yarn-error.log
+yarn.lock
+/.vs
+.idea
 .env
+.env.development
+.env.production
