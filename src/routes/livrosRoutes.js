@@ -1,5 +1,5 @@
 import express from "express";
-import LivroController from "../contollers/livroController.js";
+import LivroController from "../controllers/livroController.js";
 
 
 
@@ -16,7 +16,7 @@ export default routes;
 
 
 //import express from "express";
-//import LivroController from "../contollers/livroController.js";
+//import LivroController from "../controllers/livroController.js";
 
 
 
